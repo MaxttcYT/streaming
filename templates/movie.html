@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Auto Fullscreen Video Player</title>
+    <style>
+        video {
+            width: 50%;
+            height: 50%;
+        }
+        .play-button {
+            width: 70px;
+            height: 70px;
+            background-color: #3498db;
+            border: none;
+            border-radius: 50%;
+            color: #ffffff;
+            font-size: 24px;
+            line-height: 50px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .pause-button {
+            width: 70px;
+            height: 70px;
+            background-color: #e74c3c;
+            border: none;
+            border-radius: 50%;
+            color: #ffffff;
+            font-size: 24px;
+            line-height: 50px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .house-button {
+            width: 70px;
+            height: 70px;
+            background-color: #e74c3c;
+            border: none;
+            border-radius: 50%;
+            color: #ffffff;
+            font-size: 50px;
+            line-height: 40px;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <video id="fullscreenVideo" controls="">
+        <source src="{{ url_for('static',filename='movies/'+name+'/'+file) }}" type="video/mp4"> Your browser does not
+        support the video tag.
+    </video>
+    <button
+    onclick="play()" class="play-button">
+    &#9654;
+    </button>
+    <button
+    onclick="pause()" class="pause-button">
+    &#9646;&#9646;
+    </button>
+    <button class="house-button" onclick="home()">&#8962;</button>
+    <script>
+
+
+        const video = document.getElementById('fullscreenVideo');
+
+        video.addEventListener('play', () => {
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.mozRequestFullScreen) { // Firefox
+                video.mozRequestFullScreen();
+            } else if (video.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) { // IE/Edge
+                video.msRequestFullscreen();
+            }
+        });
+
+        function play() {
+            video.play();
+        }
+        function pause() { 
+            video.pause(); 
+          }
+        function home() {
+            location.href = "/";
+        }
+    </script>
+</body>
+
+</html>
