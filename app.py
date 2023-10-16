@@ -55,5 +55,7 @@ def hello_world():
 @app.route("/watch/<movie>/<file>")
 def watch(movie,file):
     return render_template("movie.html",name=movie,file=file)
+
+
 if __name__ == "__main__":
     app.run(debug=True,host="0.0.0.0", port=5000)
