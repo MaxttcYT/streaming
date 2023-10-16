@@ -5,13 +5,13 @@ You can add movies by simply creating a new folder in 'static/movies/' and namin
 Then, place the MP4 file in it.
 
 
--------REQUIREMENTS-------:
+-------REQUIREMENTS-------
 
---software--:
+--software--
 
-PYTHON 3
+PYTHON 3  (https://www.python.org/downloads/)
 
---packages--:
+--packages--
 
 mac/linux:
 
