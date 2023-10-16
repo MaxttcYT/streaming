@@ -16,9 +16,11 @@ PYTHON 3  (https://www.python.org/downloads/)
 mac/linux:
 
 pip3 install Flask
+
 pip3 install opencv-python
 
 windows:
 
 pip install Flask
+
 pip install opencv-python
