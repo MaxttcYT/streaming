@@ -25,7 +25,7 @@ pip install Flask
 
 pip install opencv-python
 
--------RUN-------
+------------RUN-----------
 
 use:
 
