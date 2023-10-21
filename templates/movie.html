@@ -8,6 +8,7 @@
             width: 50%;
             height: 50%;
         }
+
         .play-button {
             width: 70px;
             height: 70px;
@@ -20,6 +21,7 @@
             text-align: center;
             cursor: pointer;
         }
+
         .pause-button {
             width: 70px;
             height: 70px;
@@ -32,10 +34,24 @@
             text-align: center;
             cursor: pointer;
         }
+
         .house-button {
             width: 70px;
             height: 70px;
             background-color: #e74c3c;
+            border: none;
+            border-radius: 50%;
+            color: #ffffff;
+            font-size: 50px;
+            line-height: 40px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .reload-button {
+            width: 70px;
+            height: 70px;
+            background-color: #8ad60f;
             border: none;
             border-radius: 50%;
             color: #ffffff;
@@ -51,16 +67,19 @@
     <video id="fullscreenVideo" controls="">
         <source src="{{ url_for('static',filename='movies/'+name+'/'+file) }}" type="video/mp4"> Your browser does not
         support the video tag.
-    </video>
-    <button
-    onclick="play()" class="play-button">
-    &#9654;
+    </video><br><br>
+    <button onclick="play()" class="play-button">
+        &#9654;
     </button>
-    <button
-    onclick="pause()" class="pause-button">
-    &#9646;&#9646;
+    <button onclick="pause()" class="pause-button">
+        &#9646;&#9646;
+    </button><br>
+    <button class="house-button" onclick="home()">
+        &#8962;
     </button>
-    <button class="house-button" onclick="home()">&#8962;</button>
+    <button class="reload-button" onclick="reload()">
+        &#8635;
+    </button>
     <script>
 
 
@@ -81,11 +100,14 @@
         function play() {
             video.play();
         }
-        function pause() { 
-            video.pause(); 
-          }
+        function pause() {
+            video.pause();
+        }
         function home() {
             location.href = "/";
+        }
+        function reload() {
+            location.reload();
         }
     </script>
 </body>
