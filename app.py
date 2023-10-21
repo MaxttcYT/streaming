@@ -10,6 +10,7 @@ app = Flask(__name__)
 def hello_world():
     directory_path = "static/movies"
     folder_info_list = []
+    mp4_files = ""
 
     for folder_name in os.listdir(directory_path):
         folder_path = os.path.join(directory_path, folder_name)
@@ -49,6 +50,9 @@ def hello_world():
                     "thumbnail": png_file,
                 }
                 folder_info_list.append(folder_info)
+        else:
+            return render_template("index.html", movies=list())
+
 
     return render_template("index.html", movies=folder_info_list)
 

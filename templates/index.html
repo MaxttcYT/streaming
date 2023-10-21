@@ -38,6 +38,10 @@
 
 <body>
 
+    <h1>Your library</h1>
+    {% if movies == [] %}
+    <h3>You dont have any movies in your library.</h3>
+    {% else %}
     <div class="movies-container">
         {% for i in movies %}
         <div class="movie" onclick="location.href = '/watch/{{i.name}}/{{i.video}}';">
@@ -46,6 +50,7 @@
         </div>
         {% endfor %}
     </div>
+    {% endif %}
 
 </body>
 
