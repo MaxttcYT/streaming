@@ -38,7 +38,7 @@ def hello_world():
                 else:
                     print(f"Error: Could not open video file: {mp4_file}")
             else:
-                print(f"Thumbnail already exists for {folder_name}. Loading video...")
+                print(f"Thumbnail already exists for '{folder_name}'. Loading video...")
 
 
                 png_files = [f for f in os.listdir(folder_path) if f.endswith(".png")]
