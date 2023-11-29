@@ -15,15 +15,15 @@ PYTHON 3  (https://www.python.org/downloads/)
 
 mac/linux:
 
-pip3 install Flask
-
-pip3 install opencv-python
+pip3 install Flask                    (for the main local server)
+           
+pip3 install opencv-python            (for thumbnail generation)
 
 windows:
 
-pip install Flask
-
-pip install opencv-python
+pip install Flask                     (for the main local server)
+           
+pip install opencv-python             (for thumbnail generation)
 
 ------------RUN-----------
 
